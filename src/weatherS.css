@@ -1,7 +1,4 @@
 body{
-    background-image: url('ImagesWA/cloud_window.jpg');
-    background-repeat: no-repeat;
-    background-size: 200%;
     background-color: rgb(201, 227, 236);
     font-family: "Comfortaa", sans-serif;
 }
@@ -68,7 +65,7 @@ justify-content: space-between;
 }
 .weather-app-icon{
     font-size: 44px;
-    margin-top: 22px;
+    margin-top: -3px;
 }
 .weather-app-temperature{
   font-size: 88px;
