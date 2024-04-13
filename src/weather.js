@@ -10,13 +10,13 @@ function refreshWeather(response) {
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
 
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url} "class="weather-app-icon" />`;
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${humidityT}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url} "class="weather-app-icon" />`;
 
   getForecast(response.data.city);
 
@@ -36,13 +36,13 @@ function formatDate(date) {
     "Saturday",
   ];
 
-  let day1 = days[date.getDay()];
+  let day = days[date.getDay()];
 
   if (minutes < 10) {
-    miinutes = `0${minutes}`;
+    minutes = `0${minutes}`;
   }
 
-  return `${day1} ${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes}`;
 }
 
 function searchCity(city) {
@@ -73,11 +73,8 @@ function getForecast(city) {
 
 
 function displayForecast(response) {
-console.log(response.data);
 
-let forecastElement = document.querySelector("#forecast");
-
-let forecastHtml ="";
+let forecastHtml = "";
 
 response.data.daily.forEach(function (day, index) {
 if (index < 5) {
@@ -86,6 +83,7 @@ forecastHtml =
   `
   <div class="weather-forecast-day">
     <div class="weather-forecast-date">${formatDay(day.time)}</div>
+
     <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
     <div class="weather-forecast-temperatures">
       <div class="weather-forecast-temperature">
@@ -98,7 +96,10 @@ forecastHtml =
   </div>
 
 `;
-}});
+}
+});
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
 }
 
 let searchFormElement = document.querySelector("#search-form");

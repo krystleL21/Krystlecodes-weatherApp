@@ -4,10 +4,10 @@ body{
     background-size: 100vw 100vh;
 }
 a{
-    color: blue;
+    color: #3772FF;
 }
 h1 {
-  color: blue;
+  color: #3772FF;
 }
 .weather-app{
     background: white;
@@ -23,7 +23,7 @@ header{
     padding: 0 0 30px 0;
 }
 .search-form-input{
-    background-color: rgb(201, 227, 236);
+    background-color: #d7f3fa;
     border: none;
     border-radius: 6px;
     width: 80%;
@@ -32,7 +32,7 @@ header{
 
 }
 .search-form-button{
-    background: blue;
+    background: #3772FF;
     padding: 15px 20px;
     border: none;
     margin-left: 5px;
@@ -40,6 +40,9 @@ header{
     color: white;
     font-size: 16px;
     font-family: "Comfortaa", sans-serif;
+}
+.search-form-button:hover{
+    background:#ff0090;
 }
 main{
    padding: 30px 0;
@@ -53,12 +56,16 @@ justify-content: space-between;
     font-size: 50px;
     line-height: 48px;
 }
+.weather-app-city:hover{
+    font-size: 55px;
+    color:#ff0090;
+}
 .weather-app-details{
     font-size: 20px;
     color: rgba(39, 33, 66, 0.4);
 }
 .weather-app-details strong{
-    color:#f65282;
+    color:#ff0090;
 }
 .weather-app-temperature-container{
     display: flex;
@@ -71,16 +78,18 @@ justify-content: space-between;
 .weather-app-temperature{
   font-size: 100px;
   font-weight: bold;
-  margin-left: 10px;  
+  margin-left: 10px;
+  color: #3772FF;  
 }
 .weather-app-unit{
     margin-top: -5px;
     font-size:30px;
+  color: #3772FF;  
 }
-.weather.forecast{
-    margin-top: 20px;
+.weather-forecast{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 .weather-forecast-date{
     text-align: center;
@@ -90,12 +99,14 @@ justify-content: space-between;
   margin-bottom: 10px;
 }
 .weather-forecast-icon {
-  font-size: 38px;
-  text-align: center;
+  width: 88px;
+  height: 88px;
+  display: block;
+    margin: 0 auto;
 }
 .weather-forecast-temperatures {
   text-align: center;
-  color: #f65282;
+  color: #ff0090;
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -104,9 +115,13 @@ justify-content: space-between;
   padding: 0 10px;
 }
 footer{
-    border-top: 1px solid rgb(201, 227, 236);
+    border-top: 1px solid #3772FF;
+    padding: 30px 0 0 0;
     text-align: center;
     font-size: 12px;
     color: rgba(0,0,0,0.6);
-     margin-top: 225px;
+    
+}
+a:hover{
+    color:#ff0090;
 }
